@@ -1,0 +1,153 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 350" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7e2a2"/>
+      <stop offset="48%" stop-color="#b08d57"/>
+      <stop offset="75%" stop-color="#d9ad58"/>
+      <stop offset="100%" stop-color="#805523"/>
+    </linearGradient>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f3d4c6"/>
+      <stop offset="1" stop-color="#b86c72"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ornamental halo -->
+  <g stroke="url(#gold)" stroke-width="1.5">
+    <circle cx="160" cy="153" r="119"/>
+    <circle cx="160" cy="153" r="111" stroke-dasharray="2 5"/>
+    <circle cx="160" cy="153" r="99" stroke-dasharray="1 5"/>
+    <path d="M160 20 Q171 39 160 48 Q149 39 160 20Z"/>
+    <path d="M160 286 Q171 267 160 258 Q149 267 160 286Z"/>
+    <path d="M27 153 Q46 142 55 153 Q46 164 27 153Z"/>
+    <path d="M293 153 Q274 142 265 153 Q274 164 293 153Z"/>
+    <path d="M67 59 Q82 62 82 77 Q67 77 67 59Z"/>
+    <path d="M253 59 Q238 62 238 77 Q253 77 253 59Z"/>
+    <path d="M67 247 Q82 244 82 229 Q67 229 67 247Z"/>
+    <path d="M253 247 Q238 244 238 229 Q253 229 253 247Z"/>
+  </g>
+
+  <!-- Lotus petals behind the figure -->
+  <g stroke="url(#gold)" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M160 277 Q112 244 124 212 Q151 228 160 277Z" fill="#f6e8cb"/>
+    <path d="M160 277 Q208 244 196 212 Q169 228 160 277Z" fill="#f6e8cb"/>
+    <path d="M160 278 Q83 266 86 230 Q124 238 160 278Z" fill="#fff8ed"/>
+    <path d="M160 278 Q237 266 234 230 Q196 238 160 278Z" fill="#fff8ed"/>
+    <path d="M160 279 Q128 258 143 237 Q159 251 160 279Z" fill="#ead4a2"/>
+    <path d="M160 279 Q192 258 177 237 Q161 251 160 279Z" fill="#ead4a2"/>
+  </g>
+
+  <!-- Crown -->
+  <g stroke="url(#gold)" stroke-width="2" stroke-linejoin="round">
+    <path d="M112 111 L121 65 L140 83 L160 43 L180 83 L199 65 L208 111Z"
+          fill="#f7e5b6"/>
+    <path d="M121 65 L160 101 L199 65"/>
+    <path d="M140 83 L160 59 L180 83"/>
+    <path d="M128 96 L192 96 L201 116 L119 116Z" fill="#d8b16b"/>
+    <path d="M145 77 L160 91 L175 77"/>
+    <circle cx="160" cy="78" r="5" fill="#9b263c"/>
+    <circle cx="132" cy="94" r="3" fill="#9b263c"/>
+    <circle cx="188" cy="94" r="3" fill="#9b263c"/>
+    <path d="M111 112 Q160 127 209 112"/>
+  </g>
+
+  <!-- Ears -->
+  <g stroke="url(#gold)" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M125 123 C95 88 62 102 69 145 C73 169 94 177 128 161Z"
+          fill="#f4dfc0"/>
+    <path d="M195 123 C225 88 258 102 251 145 C247 169 226 177 192 161Z"
+          fill="#f4dfc0"/>
+    <path d="M113 133 Q89 113 86 143 Q91 159 115 153"/>
+    <path d="M207 133 Q231 113 234 143 Q229 159 205 153"/>
+  </g>
+
+  <!-- Face -->
+  <path d="M125 111 Q160 94 195 111
+           C215 136 207 175 190 195
+           Q177 212 160 213
+           Q143 212 130 195
+           C113 175 105 136 125 111Z"
+        fill="#f5dfc0" stroke="url(#gold)" stroke-width="2.5"/>
+
+  <!-- Brow and eyes -->
+  <g stroke="#8b5d32" stroke-width="2" stroke-linecap="round">
+    <path d="M131 145 Q143 136 151 146"/>
+    <path d="M169 146 Q177 136 189 145"/>
+    <path d="M135 151 Q143 158 151 151"/>
+    <path d="M169 151 Q177 158 185 151"/>
+  </g>
+  <g fill="#8b5d32">
+    <circle cx="143" cy="150" r="2.3"/>
+    <circle cx="177" cy="150" r="2.3"/>
+  </g>
+
+  <!-- Forehead mark -->
+  <g stroke="#9b263c" stroke-width="2.5" stroke-linecap="round">
+    <path d="M153 126 Q160 117 167 126"/>
+    <path d="M160 124 L160 136"/>
+  </g>
+  <circle cx="160" cy="120" r="3" fill="#c28d32"/>
+
+  <!-- Trunk -->
+  <path d="M160 163
+           C151 165 147 177 153 187
+           C160 199 174 200 176 215
+           C178 229 167 238 153 232
+           C143 228 143 216 151 212
+           C157 209 164 214 162 219"
+        stroke="url(#gold)" stroke-width="10" stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M160 163
+           C151 165 147 177 153 187
+           C160 199 174 200 176 215
+           C178 229 167 238 153 232
+           C143 228 143 216 151 212
+           C157 209 164 214 162 219"
+        stroke="#f8e8cb" stroke-width="5" stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Tusks -->
+  <path d="M143 174 Q132 187 143 192 L151 181"
+        fill="#fffaf0" stroke="url(#gold)" stroke-width="1.5"/>
+  <path d="M177 174 Q188 187 177 192 L169 181"
+        fill="#fffaf0" stroke="url(#gold)" stroke-width="1.5"/>
+
+  <!-- Necklace -->
+  <path d="M124 194 Q160 226 196 194" stroke="url(#gold)" stroke-width="3"/>
+  <g fill="#9b263c" stroke="url(#gold)" stroke-width="1">
+    <circle cx="135" cy="204" r="4"/>
+    <circle cx="147" cy="212" r="4"/>
+    <circle cx="160" cy="216" r="5"/>
+    <circle cx="173" cy="212" r="4"/>
+    <circle cx="185" cy="204" r="4"/>
+  </g>
+
+  <!-- Lower decorative flourish -->
+  <g stroke="url(#gold)" stroke-width="1.7" stroke-linecap="round">
+    <path d="M94 298 Q120 281 145 298 Q160 311 175 298 Q200 281 226 298"/>
+    <path d="M135 299 Q145 284 160 291 Q175 284 185 299"/>
+    <path d="M160 291 L160 315"/>
+    <path d="M151 307 Q160 317 169 307"/>
+    <path d="M103 298 Q97 286 87 292 Q92 303 103 298Z"/>
+    <path d="M217 298 Q223 286 233 292 Q228 303 217 298Z"/>
+  </g>
+
+  <!-- Small floral accents -->
+  <g stroke="url(#gold)" stroke-width="1.2">
+    <g transform="translate(81 190)">
+      <ellipse cy="-7" rx="4" ry="7" fill="url(#rose)"/>
+      <ellipse cy="7" rx="4" ry="7" fill="url(#rose)"/>
+      <ellipse cx="-7" rx="7" ry="4" fill="url(#rose)"/>
+      <ellipse cx="7" rx="7" ry="4" fill="url(#rose)"/>
+      <circle r="3" fill="#d8ac50"/>
+    </g>
+    <g transform="translate(239 190)">
+      <ellipse cy="-7" rx="4" ry="7" fill="url(#rose)"/>
+      <ellipse cy="7" rx="4" ry="7" fill="url(#rose)"/>
+      <ellipse cx="-7" rx="7" ry="4" fill="url(#rose)"/>
+      <ellipse cx="7" rx="7" ry="4" fill="url(#rose)"/>
+      <circle r="3" fill="#d8ac50"/>
+    </g>
+  </g>
+</svg>

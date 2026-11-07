@@ -1,26 +1,1078 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #fff8ed;
+  --paper: #fffdf8;
+  --crimson: #7a1830;
+  --deep-crimson: #501020;
+  --gold: #b08d57;
+  --marigold: #d99a24;
+  --text: #51443b;
+  --muted: #85766b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--ivory);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  min-height: 70px;
+  padding: 14px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff8edf2;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #b08d5733;
+}
+
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--crimson);
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--crimson);
+}
+
+.hero {
+  padding: 30px 18px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at top, #ffffff 0%, transparent 70%),
+    var(--ivory);
+}
+
+.hero-frame {
+  background:
+  radial-gradient(ellipse at top left, #d99a2412, transparent 38%),
+  radial-gradient(ellipse at bottom right, #7a183010, transparent 38%),
+  #fffdf8;
+  position: relative;
+  max-width: 1060px;
+  min-height: 720px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold);
+  outline: 5px double #b08d5740;
+  outline-offset: -10px;
+}
+
+
+.hero-frame::before,
+.hero-frame::after {
+  position: absolute;
+  color: var(--gold);
+  font-size: 32px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-frame::before {
+  content: "❀";
+  top: 20px;
+  left: 22px;
+}
+
+.hero-frame::after {
+  content: "❁";
+  right: 22px;
+  bottom: 20px;
+}
+
+
+.ganesha {
+  width: 112px;
+  height: 126px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.ganesha img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sanskrit {
+  margin: 0 0 20px;
+  color: var(--crimson);
+  font-size: 20px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.9;
+}
+
+.gold-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(260px, 70%);
+  margin: 20px 0;
+  color: var(--gold);
+}
+
+.gold-line::before,
+.gold-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #b08d5780;
+}
+
+.hero h1,
+.section h2,
+.event-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: var(--crimson);
+}
+
+.hero h1 {
+  margin: 4px 0 18px;
+  font-size: clamp(44px, 7vw, 78px);
+  line-height: 0.99;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero-copy {
+  max-width: 450px;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.name-placeholder {
+  margin: 12px 0 0;
+  color: var(--crimson);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 6vw, 58px);
+  line-height: 1.1;
+}
+
+.ampersand {
+  margin: 3px 0;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-style: italic;
+}
+
+.date-label {
+  margin: 4px 0 8px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.hero-date {
+  margin: 0;
+  color: var(--crimson);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.hero-venue {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 14px 23px;
+  border: 1px solid var(--crimson);
+  border-radius: 3px;
+  background: var(--crimson);
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+  background: var(--deep-crimson);
+  transform: translateY(-2px);
+}
+
+.scroll-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.section {
+  padding: 92px 24px;
+  text-align: center;
+}
+
+.welcome {
+  max-width: 790px;
+  margin: 0 auto;
+}
+
+.section-ornament {
+  margin: 18px 0 6px;
+  color: var(--gold);
+  font-size: 29px;
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.1;
+}
+
+.section-copy {
+  max-width: 590px;
+  margin: 0 auto;
+  line-height: 1.95;
+  font-size: 16px;
+}
+
+.family-names {
+  margin-top: 38px;
+  padding: 24px 12px;
+  border-top: 1px solid #b08d5760;
+  border-bottom: 1px solid #b08d5760;
+}
+
+.family-names > p:first-child {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.family-names h3,
+.rsvp h3 {
+  color: var(--crimson);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.events-section {
+  background: #f7ecdd;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1120px;
+  margin: 48px auto 0;
+  text-align: left;
+}
+
+.event-card {
+  padding: 28px 24px;
+  background: var(--paper);
+  border: 1px solid #b08d5750;
+  border-radius: 3px;
+  box-shadow: 0 12px 35px #5010200a;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px #50102012;
+}
+
+.event-symbol {
+  color: var(--gold);
+  font-size: 35px;
+}
+
+.event-number,
+.detail-label {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.event-card h3 {
+  margin: 16px 0 8px;
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.event-subtitle {
+  min-height: 40px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.event-divider {
+  margin: 20px 0;
+  color: var(--gold);
+}
+
+.event-detail {
+  margin: 18px 0;
+}
+
+.detail-label {
+  font-size: 9px;
+}
+
+.event-detail p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--crimson);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.text-link span {
+  margin-left: 5px;
+}
+
+.feast {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feast-note {
+  margin-top: 25px;
+  color: var(--crimson);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+}
+
+.rsvp {
+  background: var(--crimson);
+  color: var(--ivory);
+}
+
+.rsvp-frame {
+  max-width: 800px;
+  margin: auto;
+  padding: 50px 26px;
+  border: 1px solid #d9b979;
+}
+
+.rsvp .eyebrow,
+.rsvp .section-ornament {
+  color: #e3c58d;
+}
+
+.rsvp h2,
+.rsvp h3 {
+  color: var(--ivory);
+}
+
+.rsvp .section-copy {
+  color: #f3e4d6;
+}
+
+.family-signoff {
+  margin-top: 34px;
+}
+
+.contact-note {
+  margin-top: 25px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 15px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.footer span:nth-child(2) {
+  color: var(--gold);
+}
+
+@media (max-width: 800px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .event-card {
+    padding: 30px;
+  }
+
+  .event-subtitle {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 12px 18px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .brand {
+    font-size: 25px;
+  }
+
+  .hero {
+    padding: 16px 12px;
+  }
+
+  .hero-frame {
+    min-height: 660px;
+    padding: 55px 20px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+  }
+
+  .hero-copy {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 68px 20px;
+  }
+
+  .rsvp-frame {
+    padding: 36px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.section-ornament {
+  display: inline-block;
+  color: var(--gold);
+  text-shadow: 0 2px 8px #b08d5720;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::after {
+  content: "❀";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: #b08d5730;
+  font-size: 36px;
+  pointer-events: none;
+}
+
+.event-card:hover .event-symbol {
+  transform: scale(1.08);
+}
+
+.event-symbol {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .hero-frame::before {
+    top: 14px;
+    left: 14px;
+  }
+
+  .hero-frame::after {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* =====================================================
+   PREMIUM INDIAN WEDDING FRAME
+   Ivory • Antique Gold • Deep Crimson
+   Add this block at the bottom of globals.css
+   ===================================================== */
+
+:root {
+  --frame-ivory: #fff8ed;
+  --frame-paper: #fffdf8;
+  --frame-gold: #b08d57;
+  --frame-light-gold: #e6cc94;
+  --frame-pale-gold: #f3e5c5;
+  --frame-crimson: #7a1830;
+  --frame-deep-crimson: #501020;
+}
+
+/* Warm paper background with a soft golden glow */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background:
+    radial-gradient(
+      ellipse at 50% 8%,
+      rgb(255 255 255 / 80%),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 0% 45%,
+      rgb(230 204 148 / 16%),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 100% 70%,
+      rgb(230 204 148 / 14%),
+      transparent 36%
+    ),
+    var(--frame-ivory);
+  color: #402e27;
+}
+
+/* A fine, fixed gold frame around the complete page.
+   It does not block buttons, links, or scrolling. */
+main {
+  position: relative;
+  isolation: isolate;
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  inset: 10px;
+  z-index: 100;
+  border: 1px solid rgb(176 141 87 / 58%);
+  outline: 1px solid rgb(176 141 87 / 20%);
+  outline-offset: 4px;
+  pointer-events: none;
+}
+
+/* Decorative corner flourishes */
+.topbar {
+  position: sticky;
+  z-index: 110;
+}
+
+.topbar::before,
+.topbar::after {
+  position: absolute;
+  top: 7px;
+  color: var(--frame-gold);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.topbar::before {
+  content: "❦";
+  left: 22px;
+}
+
+.topbar::after {
+  content: "❦";
+  right: 22px;
+  transform: scaleX(-1);
+}
+
+/* Fine gold rules between important sections */
+.welcome,
+.events-section,
+.feast {
+  border-color: rgb(176 141 87 / 35%);
+}
+
+/* Add delicate decorative lines to section headings */
+.section-heading h2 {
+  position: relative;
+  display: table;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px 12px;
+}
+
+.section-heading h2::after {
+  content: "✦  ❧  ✦";
+  position: absolute;
+  right: 0;
+  bottom: -9px;
+  left: 0;
+  color: var(--frame-gold);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* A refined double-line frame around event cards */
+.event-card {
+  border: 1px solid var(--frame-light-gold);
+  outline: 1px solid rgb(176 141 87 / 24%);
+  outline-offset: -6px;
+  border-radius: 2px;
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgb(230 204 148 / 17%),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #fffdf8, #fff8ed);
+}
+
+/* Small gold details at the top of each event card */
+.event-topline {
+  border-bottom-color: rgb(176 141 87 / 45%);
+}
+
+.event-symbol {
+  border-color: var(--frame-light-gold);
+  background: rgb(255 255 255 / 45%);
+}
+
+/* Elegant separators for invitation and feast sections */
+.welcome::after,
+.feast::after {
+  content: "❧  ✦  ❧";
+  display: block;
+  margin: 22px auto 0;
+  color: var(--frame-gold);
+  font-size: 17px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* Match the final RSVP section to the crimson invitation palette */
+.rsvp {
+  border-top: 2px solid var(--frame-gold);
+  border-bottom: 2px solid var(--frame-gold);
+  background:
+    radial-gradient(
+      circle at 8% 20%,
+      rgb(230 204 148 / 12%),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 80%,
+      rgb(230 204 148 / 10%),
+      transparent 30%
+    ),
+    var(--frame-deep-crimson);
+  color: #fff8ed;
+}
+
+.rsvp h2,
+.rsvp h3 {
+  color: #fff2d6;
+}
+
+.rsvp p {
+  color: #f3dfc3;
+}
+
+/* Premium footer */
+.footer {
+  position: relative;
+  border-top: 1px solid var(--frame-light-gold);
+  background: #3e101d;
+  color: #f3dfc3;
+}
+
+.footer a {
+  color: #f3dfc3;
+}
+
+/* Ganesha gets a soft halo that suits the frame */
+.ganesha {
+  filter: drop-shadow(0 3px 7px rgb(126 82 32 / 10%));
+}
+
+.ganesha img {
+  filter: drop-shadow(0 5px 8px rgb(126 82 32 / 12%));
+}
+
+/* Keep the frame and ornaments comfortable on mobile */
+@media (max-width: 760px) {
+  main::before {
+    inset: 5px;
+    outline-offset: 2px;
+  }
+
+  .topbar::before,
+  .topbar::after {
+    top: 5px;
+    font-size: 17px;
+  }
+
+  .topbar::before {
+    left: 8px;
+  }
+
+  .topbar::after {
+    right: 8px;
+  }
+
+  .section-heading h2 {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .welcome::after,
+  .feast::after {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Ganesha invitation flourish */
+.invitation-flourish {
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px auto 16px;
+  color: var(--frame-gold);
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.sanskrit {
+  color: var(--frame-crimson);
+  letter-spacing: 1px;
+}
+
+/* Wedding invitation content sections */
+
+.family-message,
+.celebration-message,
+.closing-message {
+  max-width: 720px;
+  margin: 18px auto 28px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 850px;
+  margin: 30px auto;
+}
+
+.family-card {
+  padding: 28px 20px;
+  border: 1px solid var(--frame-light-gold, #e6cc94);
+  outline: 1px solid rgb(176 141 87 / 20%);
+  outline-offset: -6px;
+  background: rgb(255 253 248 / 75%);
+  text-align: center;
+}
+
+.family-card h3 {
+  color: var(--frame-crimson, #7a1830);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+}
+
+.family-card p {
+  line-height: 1.7;
+}
+
+.family-names {
+  color: #6b4b32;
+  font-weight: 600;
+}
+
+.event-address {
+  margin-top: 12px;
+  color: #796553;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.celebration-details {
+  max-width: 650px;
+  margin: 24px auto 0;
+  padding: 18px;
+  border-top: 1px solid var(--frame-light-gold, #e6cc94);
+  border-bottom: 1px solid var(--frame-light-gold, #e6cc94);
+  text-align: center;
+  line-height: 1.9;
+}
+
+.celebration-details p {
+  margin: 8px 0;
+}
+
+.closing-family {
+  margin-top: 24px;
+  color: #f3dfc3;
+}
+
+.closing-family-name {
+  margin: 8px 0;
+  color: #fff2d6;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+}
+
+.closing-thanks {
+  margin: 24px 0;
+  color: #f3dfc3;
+  font-style: italic;
+}
+
+#closing .primary-link {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+#family,
+#events,
+#celebration,
+#closing {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 760px) {
+  .family-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .family-card {
+    padding: 24px 18px;
+  }
+
+  .family-message,
+  .celebration-message,
+  .closing-message {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .celebration-details {
+    padding: 14px 10px;
+  }
+}
+
+/* Couple names on the main invitation */
+
+
+/* =========================================
+   BRIDE & GROOM - PREMIUM NAME DESIGN
+   ========================================= */
+
+.hero .couple-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: min(92%, 650px);
+  margin: 35px auto;
+  padding: 28px 16px;
+  box-sizing: border-box;
+  border-top: 1px solid #b08d57;
+  border-bottom: 1px solid #b08d57;
+  background: linear-gradient(
+    90deg,
+    #fff5e5,
+    #fffdf8,
+    #fff5e5
+  );
+  text-align: center;
+}
+
+.hero .couple-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.hero .couple-role {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #a17b43;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.6;
+}
+
+.hero .couple-name {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #7a1830;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 7vw, 64px);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.hero .couple-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin: 18px 0;
+}
+
+.hero .ampersand {
+  display: inline-block;
+  margin: 0;
+  color: #b08d57;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  font-style: italic;
+  line-height: 1;
+}
+
+.hero .ornament-line {
+  display: block;
+  width: 55px;
+  height: 1px;
+  background: #b08d57;
+}
+
+@media (max-width: 480px) {
+  .hero .couple-highlight {
+    width: 94%;
+    padding: 24px 10px;
+  }
+
+  .hero .couple-name {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .hero .couple-role {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+}
+
+
+
+
+
+.hero-date {
+  color: var(--ornament-crimson, #7a1830);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.hero-venue {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
 }
